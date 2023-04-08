@@ -19,7 +19,8 @@ model User {
 }
 
 model Data {
-  id    Int      @id @default(autoincrement())
-  time  DateTime
-  value String
+  id       Int      @id @default(autoincrement())
+  time     DateTime
+  value    String
+  location String
 }

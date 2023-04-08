@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { DataService } from './data.service';
 import { CreateDataDto } from './dto/create-data.dto';
 import { UpdateDataDto } from './dto/update-data.dto';
-import { Prisma } from '@prisma/client';
 
 @Controller('data')
 export class DataController {

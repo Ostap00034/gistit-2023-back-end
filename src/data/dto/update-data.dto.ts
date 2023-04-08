@@ -1,4 +1,6 @@
 export class UpdateDataDto {
-  time: Date
-  value: string
+  readonly time: Date
+  readonly value: string
+  readonly location: string
+
 }

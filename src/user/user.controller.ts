@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Public } from 'src/auth/dto/ispublic.dto';
 
 
 @Controller('user')
@@ -10,6 +11,7 @@ export class UserController {
 
   }
 
+  @Public()
   @Get()
   async getAll() {
     return this.userService.getAll()
@@ -20,9 +22,9 @@ export class UserController {
     return this.userService.createUser(dto)
   }
 
-  @Get(':id')
-  async getById(@Param('id') id: string) {
-    return this.userService.getById({ id: Number(id) })
+  @Get()
+  async getByEmail(email: string) {
+    return this.userService.getByEmail(email)
   }
 
   @Put(':id')
