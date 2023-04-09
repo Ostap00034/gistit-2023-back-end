@@ -7,7 +7,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) { }
-  
+
   async getAll() {
     return this.prisma.user.findMany();
   }
@@ -17,7 +17,7 @@ export class UserService {
   ) {
     const user = this.prisma.user.findUnique({
       where: {
-        email: email
+        email
       }
     });
 
